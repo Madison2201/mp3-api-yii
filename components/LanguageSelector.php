@@ -1,8 +1,8 @@
 <?php
 
-namespace api\components;
+namespace app\components;
 
-use api\enums\Language;
+use app\enums\Language;
 use Yii;
 use yii\base\Component;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace api\services;
+namespace app\services;
 
-use api\forms\TagAssignmentsForm;
-use api\interface\repositories\TagAssignmentsRepositoryInterface;
-use api\interface\services\TagAssignmentsServiceInterface;
-use api\models\TagAssignments;
+use app\forms\TagAssignmentsForm;
+use app\interface\repositories\TagAssignmentsRepositoryInterface;
+use app\interface\services\TagAssignmentsServiceInterface;
+use app\models\TagAssignments;
 use Throwable;
 
 class TagAssignmentsService implements TagAssignmentsServiceInterface

@@ -1,8 +1,8 @@
 <?php
 
-namespace api\interface\repositories;
+namespace app\interface\repositories;
 
-use api\models\Tag;
+use app\models\Tag;
 use yii\data\ActiveDataProvider;
 
 interface TagRepositoryInterface

@@ -1,10 +1,10 @@
 <?php
 
-namespace api\controllers;
+namespace app\controllers;
 
-use api\interface\services\AuthServiceInterface;
-use api\services\AuthService;
-use common\models\LoginForm;
+use app\interface\services\AuthServiceInterface;
+use app\services\AuthService;
+use app\models\LoginForm;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\rest\Controller;

@@ -1,11 +1,11 @@
 <?php
 
-namespace api\services;
+namespace app\services;
 
-use api\forms\TagForm;
-use api\interface\repositories\TagRepositoryInterface;
-use api\interface\services\TagServiceInterface;
-use api\models\Tag;
+use app\forms\TagForm;
+use app\interface\repositories\TagRepositoryInterface;
+use app\interface\services\TagServiceInterface;
+use app\models\Tag;
 use Throwable;
 use yii\data\ActiveDataProvider;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace api\forms;
+namespace app\forms;
 
-use api\models\Post;
+use app\models\Post;
 use Yii;
 use yii\base\Model;
 use yii\web\ForbiddenHttpException;

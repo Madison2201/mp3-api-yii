@@ -1,9 +1,9 @@
 <?php
 
-namespace api\repositories;
+namespace app\repositories;
 
-use api\interface\repositories\PostRepositoryInterface;
-use api\models\Post;
+use app\interface\repositories\PostRepositoryInterface;
+use app\models\Post;
 use Throwable;
 use Yii;
 use yii\data\ActiveDataProvider;

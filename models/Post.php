@@ -1,8 +1,8 @@
 <?php
 
-namespace api\models;
+namespace app\models;
 
-use api\enums\PostStatus;
+use app\enums\PostStatus;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\data\ActiveDataProvider;

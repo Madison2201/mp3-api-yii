@@ -1,11 +1,11 @@
 <?php
 
-namespace api\services;
+namespace app\services;
 
-use api\interface\repositories\UserRepositoryInterface;
-use api\interface\services\AuthServiceInterface;
-use api\repositories\UserRepository;
-use common\models\LoginForm;
+use app\interface\repositories\UserRepositoryInterface;
+use app\interface\services\AuthServiceInterface;
+use app\repositories\UserRepository;
+use app\models\LoginForm;
 use Yii;
 
 class AuthService implements AuthServiceInterface

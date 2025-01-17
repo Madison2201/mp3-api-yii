@@ -1,8 +1,8 @@
 <?php
 
-namespace api\interface\services;
+namespace app\interface\services;
 
-use common\models\LoginForm;
+use app\models\LoginForm;
 
 interface AuthServiceInterface
 {

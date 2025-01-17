@@ -1,11 +1,11 @@
 <?php
 
-namespace api\services;
+namespace app\services;
 
-use api\forms\PostForm;
-use api\interface\repositories\PostRepositoryInterface;
-use api\interface\services\PostServiceInterface;
-use api\models\Post;
+use app\forms\PostForm;
+use app\interface\repositories\PostRepositoryInterface;
+use app\interface\services\PostServiceInterface;
+use app\models\Post;
 use Throwable;
 use Yii;
 use yii\data\ActiveDataProvider;

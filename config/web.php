@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$definitions = require __DIR__ . '/definitions.php';
 
 $config = [
     'id' => 'app-api',
@@ -14,7 +15,7 @@ $config = [
     ],
     'components' => [
         'languageSelector' => [
-            'class' => 'api\components\LanguageSelector',
+            'class' => 'app\components\LanguageSelector',
         ],
         'i18n' => [
             'translations' => [
@@ -25,7 +26,7 @@ $config = [
             ],
         ],
         'jwt' => [
-            'class' => api\components\JwtService::class,
+            'class' => app\components\JwtService::class,
         ],
         'request' => [
             'class' => '\yii\web\Request',
@@ -77,6 +78,9 @@ $config = [
         ],
         'db' => $db,
         'urlManager' => require __DIR__ . '/urlManager.php',
+    ],
+    'container' => [
+        'definitions' => $definitions,
     ],
     'params' => $params,
 ];

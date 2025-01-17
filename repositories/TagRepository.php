@@ -1,9 +1,9 @@
 <?php
 
-namespace api\repositories;
+namespace app\repositories;
 
-use api\interface\repositories\TagRepositoryInterface;
-use api\models\Tag;
+use app\interface\repositories\TagRepositoryInterface;
+use app\models\Tag;
 use Throwable;
 use Yii;
 use yii\data\ActiveDataProvider;

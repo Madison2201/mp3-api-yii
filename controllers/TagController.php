@@ -1,12 +1,12 @@
 <?php
 
-namespace api\controllers;
+namespace app\controllers;
 
-use api\components\JwtAuth;
-use api\forms\TagAssignmentsForm;
-use api\forms\TagForm;
-use api\interface\services\TagAssignmentsServiceInterface;
-use api\interface\services\TagServiceInterface;
+use app\components\JwtAuth;
+use app\forms\TagAssignmentsForm;
+use app\forms\TagForm;
+use app\interface\services\TagAssignmentsServiceInterface;
+use app\interface\services\TagServiceInterface;
 use Throwable;
 use Yii;
 use yii\data\ActiveDataProvider;

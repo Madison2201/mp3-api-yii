@@ -1,8 +1,8 @@
 <?php
 
-namespace api\interface\repositories;
+namespace app\interface\repositories;
 
-use api\models\Post;
+use app\models\Post;
 use yii\data\ActiveDataProvider;
 
 interface PostRepositoryInterface

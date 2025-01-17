@@ -1,11 +1,11 @@
 <?php
 
-namespace api\controllers;
+namespace app\controllers;
 
-use api\components\JwtAuth;
-use api\forms\PostForm;
-use api\helpers\FileHelper;
-use api\interface\services\PostServiceInterface;
+use app\components\JwtAuth;
+use app\forms\PostForm;
+use app\helpers\FileHelper;
+use app\interface\services\PostServiceInterface;
 use Exception;
 use Yii;
 use yii\data\ActiveDataProvider;

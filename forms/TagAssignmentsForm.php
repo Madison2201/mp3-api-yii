@@ -1,10 +1,10 @@
 <?php
 
-namespace api\forms;
+namespace app\forms;
 
-use api\models\Post;
-use api\models\Tag;
-use api\models\TagAssignments;
+use app\models\Post;
+use app\models\Tag;
+use app\models\TagAssignments;
 use Yii;
 use yii\base\Model;
 

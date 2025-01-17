@@ -1,9 +1,9 @@
 <?php
 
-namespace api\interface\services;
+namespace app\interface\services;
 
-use api\forms\TagForm;
-use api\models\Tag;
+use app\forms\TagForm;
+use app\models\Tag;
 use yii\data\ActiveDataProvider;
 
 interface TagServiceInterface

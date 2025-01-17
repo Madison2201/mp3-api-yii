@@ -1,8 +1,8 @@
 <?php
 
-namespace api\interface\repositories;
+namespace app\interface\repositories;
 
-use api\models\TagAssignments;
+use app\models\TagAssignments;
 
 interface TagAssignmentsRepositoryInterface
 {

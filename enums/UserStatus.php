@@ -1,6 +1,6 @@
 <?php
 
-namespace api\enums;
+namespace app\enums;
 
 enum UserStatus: int
 {

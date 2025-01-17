@@ -1,9 +1,9 @@
 <?php
 
-namespace api\repositories;
+namespace app\repositories;
 
-use api\interface\repositories\TagAssignmentsRepositoryInterface;
-use api\models\TagAssignments;
+use app\interface\repositories\TagAssignmentsRepositoryInterface;
+use app\models\TagAssignments;
 use Yii;
 use yii\db\StaleObjectException;
 use yii\web\NotFoundHttpException;

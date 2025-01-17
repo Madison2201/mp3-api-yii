@@ -1,10 +1,10 @@
 <?php
 
-namespace api\repositories;
+namespace app\repositories;
 
-use api\enums\UserStatus;
-use api\interface\repositories\UserRepositoryInterface;
-use api\models\User;
+use app\enums\UserStatus;
+use app\interface\repositories\UserRepositoryInterface;
+use app\models\User;
 use DomainException;
 use Yii;
 use yii\db\ActiveRecord;

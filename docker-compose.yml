@@ -3,6 +3,8 @@ services:
     build:
       context: ./docker
       dockerfile: nginx.docker
+    env_file:
+      - .env
     volumes:
       - ./:/app
     depends_on:
@@ -19,8 +21,11 @@ services:
       dockerfile: php-fpm.docker
     environment:
       APP_DEBUG: 1
+    env_file:
+      - .env
     volumes:
       - ./:/app
+      - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
     networks:
       customnetwork:
         ipv4_address: 172.10.0.12
@@ -30,6 +35,8 @@ services:
       dockerfile: php-cli.docker
     environment:
       APP_DEBUG: 1
+    env_file:
+      - .env
     volumes:
       - ./:/app
       - composer:/root/.composer/cache

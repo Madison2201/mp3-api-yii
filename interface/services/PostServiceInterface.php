@@ -1,9 +1,9 @@
 <?php
 
-namespace api\interface\services;
+namespace app\interface\services;
 
-use api\forms\PostForm;
-use api\models\Post;
+use app\forms\PostForm;
+use app\models\Post;
 
 interface PostServiceInterface
 {

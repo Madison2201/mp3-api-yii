@@ -1,6 +1,6 @@
 <?php
 
-namespace api\helpers;
+namespace app\helpers;
 
 use Exception;
 use FFMpeg\FFMpeg;

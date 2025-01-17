@@ -1,8 +1,8 @@
 <?php
 
-namespace api\interface\services;
+namespace app\interface\services;
 
-use api\forms\TagAssignmentsForm;
+use app\forms\TagAssignmentsForm;
 
 interface TagAssignmentsServiceInterface
 {
