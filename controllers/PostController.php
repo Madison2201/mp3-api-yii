@@ -60,7 +60,7 @@ class PostController extends Controller
     {
         $form = new PostForm();
         $form->setAttributes(Yii::$app->request->post());
-        $form->file = FileHelper::upload(UploadedFile::getInstanceByName('file'));
+        $form->file_url = FileHelper::uploadToMinio(UploadedFile::getInstanceByName('file'));
         if ($form->validate()) {
 
             $post = $this->service->create($form);

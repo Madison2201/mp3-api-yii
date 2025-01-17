@@ -122,7 +122,7 @@ class TagController extends Controller
             return [
                 'success' => true,
                 'id' => $tag->id,
-                'message' => Yii::t('app', 'tag_deleted_successfully'),
+                'message' => Yii::t('app', 'tag_updated_successfully'),
             ];
 
         }

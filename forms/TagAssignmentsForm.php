@@ -10,25 +10,25 @@ use yii\base\Model;
 
 class TagAssignmentsForm extends Model
 {
-    public  $id_tag;
-    public  $id_post;
+    public  $tag_id;
+    public  $post_id;
     const SCENARIO_DELETE = 'delete';
     public function rules(): array
     {
         return [
-            [['id_tag', 'id_post'], 'required'],
-            [['id_tag', 'id_post'], 'integer', 'min' => 1, 'max' => PHP_INT_MAX],
-            ['id_tag', 'exist', 'targetClass' => Tag::class, 'targetAttribute' => 'id', 'message' => Yii::t('app', 'id_tag_not_found')],
-            ['id_post', 'exist', 'targetClass' => Post::class, 'targetAttribute' => 'id', 'message' => Yii::t('app', 'id_post_not_found')],
-            ['id_post', 'validateUniqueAssignment', 'on' => self::SCENARIO_DEFAULT],
-            ['id_post', 'existAssignment', 'on' => self::SCENARIO_DELETE],
+            [['tag_id', 'post_id'], 'required'],
+            [['tag_id', 'post_id'], 'integer', 'min' => 1, 'max' => PHP_INT_MAX],
+            ['tag_id', 'exist', 'targetClass' => Tag::class, 'targetAttribute' => 'id', 'message' => Yii::t('app', 'tag_id_not_found')],
+            ['post_id', 'exist', 'targetClass' => Post::class, 'targetAttribute' => 'id', 'message' => Yii::t('app', 'post_id_not_found')],
+            ['post_id', 'validateUniqueAssignment', 'on' => self::SCENARIO_DEFAULT],
+            ['post_id', 'existAssignment', 'on' => self::SCENARIO_DELETE],
         ];
     }
 
     public function validateUniqueAssignment($attribute, $params): void
     {
         $exists = TagAssignments::find()
-            ->where(['id_post' => $this->id_post, 'id_tag' => $this->id_tag])
+            ->where(['post_id' => $this->post_id, 'tag_id' => $this->tag_id])
             ->exists();
         if ($exists) {
             $this->addError($attribute, Yii::t('app', 'record_already_exists'));
@@ -38,7 +38,7 @@ class TagAssignmentsForm extends Model
     public function existAssignment($attribute, $params): void
     {
         $exists = TagAssignments::find()
-            ->where(['id_post' => $this->id_post, 'id_tag' => $this->id_tag])
+            ->where(['post_id' => $this->post_id, 'tag_id' => $this->tag_id])
             ->exists();
         if (!$exists) {
             $this->addError($attribute, Yii::t('app', 'record_does_not_exists'));

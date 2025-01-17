@@ -11,6 +11,7 @@ class PostForm extends Model
 {
     public $title;
     public $description;
+    public $file_url;
     public $file;
     public $created_at;
     public $updated_at;
@@ -23,7 +24,7 @@ class PostForm extends Model
         if ($post) {
             $this->title = $post->title;
             $this->description = $post->description;
-            $this->file = $post->file;
+            $this->file_url = $post->file_url;
             $this->created_at = $post->created_at;
             $this->updated_at = $post->updated_at;
             $this->status = $post->status;
@@ -36,10 +37,9 @@ class PostForm extends Model
     public function rules(): array
     {
         return [
-            [['title', 'description', 'file'], 'required'],
+            [['title', 'description',], 'required'],
             [['title', 'description'], 'string', 'max' => 255],
-            [['file'], 'file'],
-            [['file'], 'file', 'maxSize' => 20971520, 'tooBig' => Yii::t('app', 'max_size_file')],
+            [['file_url'], 'string', 'max' => 255],
             [['created_at', 'updated_at'], 'safe'],
             [['user_id'], 'validateUserId'],
         ];

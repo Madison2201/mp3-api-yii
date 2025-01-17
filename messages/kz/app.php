@@ -1,7 +1,7 @@
 <?php
 return [
-    'id_tag_not_found' => 'Tag ID табылмады',
-    'id_post_not_found' => 'Post id табылмады',
+    'tag_id_not_found' => 'Tag ID табылмады',
+    'post_id_not_found' => 'Post id табылмады',
 
     'record_already_exists' => 'Жазба қазірдің өзінде бар',
     'record_does_not_exists' => 'Мұндай байланыс жоқ',

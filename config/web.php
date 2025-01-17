@@ -14,6 +14,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'minio' => [
+            'class' => 'app\components\MinioClient',
+        ],
         'languageSelector' => [
             'class' => 'app\components\LanguageSelector',
         ],

@@ -1,7 +1,7 @@
 <?php
 return [
-    'id_tag_not_found' => 'Tag ID not found',
-    'id_post_not_found' => 'Post ID not found',
+    'tag_id_not_found' => 'Tag ID not found',
+    'post_id_not_found' => 'Post ID not found',
     'record_already_exists' => 'The record already exists',
     'record_does_not_exists' => 'The record does not exist',
 

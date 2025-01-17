@@ -21,8 +21,8 @@ class TagAssignmentsService implements TagAssignmentsServiceInterface
     public function attachTag(TagAssignmentsForm $form): void
     {
         $assigment = TagAssignments::create(
-            $form->id_tag,
-            $form->id_post
+            $form->tag_id,
+            $form->post_id
         );
         $this->repository->save($assigment);
     }
@@ -32,7 +32,7 @@ class TagAssignmentsService implements TagAssignmentsServiceInterface
      */
     public function detachTag(TagAssignmentsForm $form): void
     {
-        $assignments = $this->repository->getByCondition(['id_post' => $form->id_post, 'id_tag' => $form->id_tag]);
+        $assignments = $this->repository->getByCondition(['post_id' => $form->post_id, 'tag_id' => $form->tag_id]);
         $this->repository->detach($assignments);
 
     }

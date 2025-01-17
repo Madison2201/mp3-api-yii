@@ -13,7 +13,7 @@ use yii\db\ActiveRecord;
  * @property integer $id
  * @property string $title
  * @property string $description
- * @property file $file
+ * @property string $file_url
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $status
@@ -26,23 +26,23 @@ class Post extends ActiveRecord
         return "{{%post}}";
     }
 
-    public static function create(string $title, string $description, $file): self
+    public static function create(string $title, string $description,string $file_url): self
     {
         $post = new static();
         $post->title = $title;
         $post->description = $description;
-        $post->file = $file;
+        $post->file_url = $file_url;
         $post->created_at = time();
         $post->status = PostStatus::ACTIVE->value;
         $post->user_id = Yii::$app->user->id;
         return $post;
     }
 
-    public function edit(string $title, string $description, $file, int $status): void
+    public function edit(string $title, string $description,string $file_url, int $status): void
     {
         $this->title = $title;
         $this->description = $description;
-        $this->file = $file;
+        $this->file_url = $file_url;
         $this->status = $status;
         $this->updated_at = time();
     }
@@ -54,6 +54,7 @@ class Post extends ActiveRecord
             'title',
             'description',
             'status',
+            'file_url',
             'created_at' => function () {
                 return date('Y-m-d H:i:s', $this->created_at);
             },
@@ -65,18 +66,14 @@ class Post extends ActiveRecord
      */
     public function getTags(): ActiveQuery
     {
-        return $this->hasMany(Tag::class, ['id' => 'id_tag'])
-            ->viaTable('tag_assignments', ['id_post' => 'id']);
+        return $this->hasMany(Tag::class, ['id' => 'tag_id'])
+            ->viaTable('tag_assignments', ['post_id' => 'id']);
     }
 
     public function extraFields()
     {
         return [
             'tags',
-            'file' => function () {
-                $audioData = stream_get_contents($this->file);
-                return base64_encode($audioData);
-            } ,
         ];
     }
 
@@ -117,8 +114,8 @@ class Post extends ActiveRecord
             $timestamp = strtotime($this->created_at);
             $query->andFilterWhere(['=', 'created_at', $timestamp]);
         }
-        if (!empty($params['id_tag'])) {
-            $query->andWhere(['t.id' => $params['id_tag']]);
+        if (!empty($params['tag_id'])) {
+            $query->andWhere(['t.id' => $params['tag_id']]);
         }
 
         return $dataProvider;

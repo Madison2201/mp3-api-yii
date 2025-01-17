@@ -5,8 +5,8 @@ namespace app\models;
 use yii\db\ActiveRecord;
 
 /**
- * @property int $id_post
- * @property int $id_tag
+ * @property int $post_id
+ * @property int $tag_id
  */
 class TagAssignments extends ActiveRecord
 {
@@ -14,11 +14,11 @@ class TagAssignments extends ActiveRecord
     {
         return '{{%tag_assignments}}';
     }
-    public static function create(int $id_tag, int $id_post): self
+    public static function create(int $tag_id, int $post_id): self
     {
         $assignment = new self();
-        $assignment->id_tag = $id_tag;
-        $assignment->id_post = $id_post;
+        $assignment->tag_id = $tag_id;
+        $assignment->post_id = $post_id;
         return $assignment;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 return [
-    'id_tag_not_found' => 'Tag ID не найден',
-    'id_post_not_found' => 'Post ID не найден',
+    'tag_id_not_found' => 'Tag ID не найден',
+    'post_id_not_found' => 'Post ID не найден',
 
     'record_already_exists' => 'Запись уже существует',
     'record_does_not_exists' => 'Такой связи не существует',

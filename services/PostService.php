@@ -39,7 +39,7 @@ class PostService implements PostServiceInterface
         $post = Post::create(
             $form->title,
             $form->description,
-            $form->file
+            $form->file_url
         );
         $this->posts->save($post);
         return $post;
@@ -50,7 +50,7 @@ class PostService implements PostServiceInterface
         $post->edit(
             $form->title,
             $form->description,
-            $form->file,
+            $form->file_url,
             $form->status
         );
         $this->posts->save($post);
