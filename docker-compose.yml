@@ -1,0 +1,59 @@
+services:
+  mp3-nginx:
+    build:
+      context: ./docker
+      dockerfile: nginx.docker
+    volumes:
+      - ./:/app
+    depends_on:
+      - mp3-php-fpm
+    ports:
+      - "81:80"
+    networks:
+      customnetwork:
+        ipv4_address: 172.10.0.10
+
+  mp3-php-fpm:
+    build:
+      context: ./docker
+      dockerfile: php-fpm.docker
+    environment:
+      APP_DEBUG: 1
+    volumes:
+      - ./:/app
+    networks:
+      customnetwork:
+        ipv4_address: 172.10.0.12
+  mp3-php-cli:
+    build:
+      context: ./docker
+      dockerfile: php-cli.docker
+    environment:
+      APP_DEBUG: 1
+    volumes:
+      - ./:/app
+      - composer:/root/.composer/cache
+    networks:
+      customnetwork:
+        ipv4_address: 172.10.0.11
+  mp3-postgres:
+    image: postgres:17.2-alpine
+    volumes:
+      - mp3-postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: app
+    ports:
+      - "54321:5432"
+    networks:
+      customnetwork:
+        ipv4_address: 172.10.0.13
+volumes:
+  mp3-postgres:
+  composer:
+networks:
+  customnetwork:
+    ipam:
+      config:
+        - subnet: 172.10.0.0/16
